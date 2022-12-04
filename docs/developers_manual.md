@@ -15,3 +15,8 @@ yarn create next-app --typescript
 # 開発サーバー起動
 yarn dev
 ```
+
+```bash
+# ライブラリインストール
+yarn add framer-motion
+```
