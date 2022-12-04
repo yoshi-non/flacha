@@ -1,0 +1,17 @@
+/* -----  Flashモードページ  ----- */
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    min-height: 100vh;
+}
+
+/* メインコンテンツ */
+.main {
+    background: rgb(181, 157, 127);
+    width: 800px;
+    height: 600px;
+    margin: auto;
+    display: flex;
+}

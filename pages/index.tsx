@@ -1,16 +1,12 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
-import { motion } from 'framer-motion'
 import styles from '../styles/Home.module.css'
+import Layout from '../components/common/layout'
 
 export default function Home() {
   return (
-    <motion.div
-    initial={{ opacity: 0 }} // 初期状態
-    animate={{ opacity: 1 }} // マウント時
-    exit={{ opacity: 0 }}    // アンマウント時
-    >
+    <Layout>
       <div className={styles.container}>
         <Head>
           <title>Flacha App</title>
@@ -36,6 +32,6 @@ export default function Home() {
           </Link>
         </main>
       </div>
-    </motion.div>
+    </Layout>
   )
 }
