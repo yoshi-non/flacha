@@ -8,23 +8,3 @@
 }
 
 /* メインコンテンツ */
-.main {
-    background-color: rgb(245 228 183);
-    width: 800px;
-    height: 600px;
-    margin: auto;
-}
-
-.btnBox {
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
-    width: 90%;
-    margin: 4rem auto;
-}
-
-.btnFlash {
-    font-size: 2.5rem;
-    border: 3px solid black;
-    background-color: transparent;
-}
