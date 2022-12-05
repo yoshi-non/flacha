@@ -1,13 +1,11 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import Link from 'next/link'
 import styles from '../styles/Home.module.css'
 import Layout from '../components/common/layout'
-import DigitalClock from '../components/DigitalClock'
-import { useTime } from '../hooks/useTime'
+import Comment from '../components/home/Comment'
+import Button from '../components/home/Button'
 
 export default function Home() {
-  const time = useTime(1000)
 
   return (
     <Layout>
@@ -18,8 +16,6 @@ export default function Home() {
           <link rel="icon" href="/favicon.ico" />
         </Head>
 
-
-        {/* タイトル start */}
         <Image
           src="/images/bg_title.png"
           width={400}
@@ -31,37 +27,18 @@ export default function Home() {
           <h1 className={styles.title}>Flacha</h1>
           <h2 className={styles.subtitle}>スパチャフラッシュ暗算</h2>
         </header>
-        {/* タイトル end */}
 
-        {/* コメント start */}
-        <div className={styles.commentBox}>
-          <div className={styles.comments}>
-            <div className={styles.comment}>コメント</div>
+        <div className={styles.layoutContainer}>
+          {/* 左にコメント 右にボタン */}
+
+          <div className={styles.commentContainer}>
+            <Comment/>
           </div>
-          <div className={styles.commentTime}>
-            <DigitalClock time={time}/>
+          <div className={styles.btnContainer}>
+            <Button/>
           </div>
         </div>
-        {/* コメント end */}
-
-        <main className={styles.main}>
-          {/* <Link href="Flash" className={styles.homeBtn} scroll={false}>
-            フラッシュモード
-          </Link>
-          <Link href="Chat" className={styles.homeBtn} scroll={false}>
-            チャットモード
-          </Link>
-          <button className={styles.homeModalBtn}>
-            遊び方
-          </button>
-          <button className={styles.homeModalBtn}>
-            設定
-          </button>
-          <button className={styles.homeModalBtn}>
-            クレジット
-          </button> */}
-        </main>
-        </div>
+      </div>
     </Layout>
   )
 }
