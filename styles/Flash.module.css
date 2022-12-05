@@ -1,10 +1,61 @@
 /* -----  Flashモードページ  ----- */
 
 .container {
-    display: flex;
-    justify-content: center;
-    align-content: center;
+    width: 100%;
     min-height: 100vh;
+    background-image: url(../public/images/bg_home.png);
+    background-size: cover;
+    overflow: hidden;
+    position: relative;
 }
 
 /* メインコンテンツ */
+
+.btnBox {
+    width: 1000px;
+    margin: 30px auto;
+    display: flex;
+    font-size: 1.4rem;
+}
+
+.btnTitle {
+    flex: 1;
+    background-color: aqua;
+    padding: 5px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.btnBlock {
+    flex: 3;
+    padding: 5px;
+    display: flex;
+    gap: 10px;
+    background-color: blueviolet;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.selectBtn,
+.curSelectBtn {
+    cursor: pointer;
+    text-align: center;
+    min-width: 100px;
+    padding: 1px 10px;
+    border-top: 5px solid rgba(0, 0, 0, 0.5);
+    border-bottom: 5px solid rgba(0, 0, 0, 0.5);
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-radius: 10px;
+}
+
+.selectBtn {
+    background-color: blue;
+}
+
+.curSelectBtn {
+    color: black;
+    background-color: yellow;
+}
