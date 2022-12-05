@@ -1,16 +1,36 @@
 /* -----  ホームページ  ----- */
 
 .container {
+  width: 100%;
+  margin: 0 auto;
   min-height: 100vh;
+  background-image: url(../public/images/bg_home.png);
+  background-size: cover;
+  overflow: hidden;
+  position: relative;
 }
 
 /* タイトル */
+.bg_title {
+  position: absolute;
+  top: 60px;
+  right: 0;
+}
+
 .titleBox {
-  padding: 1rem 0;
+  position: absolute;
+  top: 60px;
+  right: 60px;
+  flex: 1;
+  padding: 0 5px;
 }
 
 .title {
-  font-size: 4rem;
+  font-size: 3.5rem;
+}
+
+.subtitle {
+  font-size: 1.3rem;
 }
 
 .title,
@@ -18,31 +38,67 @@
   text-align: center;
 }
 
-/* メインコンテンツ */
-.main {
-  width: 90%;
-  margin: 0 auto;
+/* コメント */
+.commentBox {
+  position: absolute;
+  width: 454px;
+  height: 600px;
+  top: 5rem;
+  left: 100px;
+  background-image: url(../public/images/bg_comment.png);
+  background-size: cover;
   display: flex;
+  justify-content: center;
 }
 
-.flash,
-.chat {
+.comments {
+  position: absolute;
+  max-height: 400px;
+  width: 350px;
+  bottom: 100px;
+  overflow: hidden;
+}
+
+.comment {
+  width: 100%;
+  font-size: 1.4rem;
+  font-weight: 900;
+  padding: 5px;
+}
+
+.commentTime {
+  position: absolute;
+  width: 100%;
+  font-size: 2.5rem;
+  color: #fff3f8;
+  text-align: center;
+  bottom: 10px;
+}
+
+/* メインコンテンツ */
+/* .main {
   flex: 1;
-  margin: 2rem 0;
+  margin: 5rem auto 0 auto;
+}
+
+.homeBtn,
+.homeModalBtn {
+  margin: 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
   color: black;
   background-color: white;
+  border-radius: 5px;
   cursor: pointer;
   transition: 0.6s;
 }
 
-.flash:hover,
-.chat:hover {
+.homeBtn:hover,
+.homeModalBtn:hover {
   filter: opacity(70%);
 }
 
-.flash {}
-
-.chat {}
+.homeModalBtn {
+  width: 100%;
+} */

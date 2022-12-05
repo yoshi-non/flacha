@@ -5,6 +5,7 @@ import styles from '../styles/Home.module.css'
 import Layout from '../components/common/layout'
 
 export default function Home() {
+
   return (
     <Layout>
       <div className={styles.container}>
@@ -14,24 +15,52 @@ export default function Home() {
           <link rel="icon" href="/favicon.ico" />
         </Head>
 
+
+        {/* タイトル start */}
+        <Image
+          src="/images/bg_title.png"
+          width={400}
+          height={120}
+          alt={'タイトル背景'}
+          className={styles.bg_title}
+        />
         <header className={styles.titleBox}>
           <h1 className={styles.title}>Flacha</h1>
           <h2 className={styles.subtitle}>スパチャフラッシュ暗算</h2>
         </header>
+        {/* タイトル end */}
+
+        {/* コメント start */}
+        <div className={styles.commentBox}>
+          <div className={styles.comments}>
+            <div className={styles.comment}>コメント</div>
+            <div className={styles.comment}>コメント</div>
+            <div className={styles.comment}>コメント</div>
+            <div className={styles.comment}>コメント</div>
+            <div className={styles.comment}>コメント</div>
+          </div>
+          <div className={styles.commentTime}>12:05</div>
+        </div>
+        {/* コメント end */}
 
         <main className={styles.main}>
-          <Link href="Flash" className={styles.flash} scroll={false}>
-            <div>
-              フラッシュモード
-            </div>
+          {/* <Link href="Flash" className={styles.homeBtn} scroll={false}>
+            フラッシュモード
           </Link>
-          <Link href="Chat" className={styles.chat} scroll={false}>
-            <div>
-              チャットモード
-            </div>
+          <Link href="Chat" className={styles.homeBtn} scroll={false}>
+            チャットモード
           </Link>
+          <button className={styles.homeModalBtn}>
+            遊び方
+          </button>
+          <button className={styles.homeModalBtn}>
+            設定
+          </button>
+          <button className={styles.homeModalBtn}>
+            クレジット
+          </button> */}
         </main>
-      </div>
+        </div>
     </Layout>
   )
 }
