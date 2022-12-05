@@ -3,8 +3,11 @@ import Image from 'next/image'
 import Link from 'next/link'
 import styles from '../styles/Home.module.css'
 import Layout from '../components/common/layout'
+import DigitalClock from '../components/DigitalClock'
+import { useTime } from '../hooks/useTime'
 
 export default function Home() {
+  const time = useTime(1000)
 
   return (
     <Layout>
@@ -34,12 +37,10 @@ export default function Home() {
         <div className={styles.commentBox}>
           <div className={styles.comments}>
             <div className={styles.comment}>コメント</div>
-            <div className={styles.comment}>コメント</div>
-            <div className={styles.comment}>コメント</div>
-            <div className={styles.comment}>コメント</div>
-            <div className={styles.comment}>コメント</div>
           </div>
-          <div className={styles.commentTime}>12:05</div>
+          <div className={styles.commentTime}>
+            <DigitalClock time={time}/>
+          </div>
         </div>
         {/* コメント end */}
 

@@ -19,4 +19,5 @@ yarn dev
 ```bash
 # ライブラリインストール
 yarn add framer-motion
+yarn add dayjs
 ```
