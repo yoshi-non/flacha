@@ -1,5 +1,5 @@
-import Link from 'next/link'
 import React, { useState } from 'react'
+import ReturnButton from '../components/common/button/ReturnButton'
 import StartButton from '../components/common/button/StartButton'
 import Layout from '../components/common/layout'
 import SelectDigitSetting from '../components/flash/SelectDigitSetting'
@@ -14,22 +14,22 @@ const Flash = () => {
 
   return (
     <Layout>
-      {/* <Link href="/">ホームに戻る</Link> */}
+      <ReturnButton/>
       <div className={styles.container}>
 
-      <div>
-        <div className={styles.selectContainer}>
-          <div className={styles.selectBoxHr}></div>
-          <div className={styles.selectBox}>
-            <SelectTimeSetting setSelectTimeValue={setSelectTimeValue}/>
-            <SelectQuestionSetting setSelectQuestionValue={setSelectQuestionValue}/>
-            <SelectDigitSetting setSelectDigitValue={setSelectDigitValue}/>
+        <div>
+          <div className={styles.selectContainer}>
+            <div className={styles.selectBoxHr}></div>
+            <div className={styles.selectBox}>
+              <SelectTimeSetting setSelectTimeValue={setSelectTimeValue}/>
+              <SelectQuestionSetting setSelectQuestionValue={setSelectQuestionValue}/>
+              <SelectDigitSetting setSelectDigitValue={setSelectDigitValue}/>
+            </div>
+            <div className={styles.selectBoxHr}></div>
           </div>
-          <div className={styles.selectBoxHr}></div>
-        </div>
 
-        <StartButton/>
-      </div>
+          <StartButton/>
+        </div>
 
       </div>
     </Layout>

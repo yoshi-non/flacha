@@ -20,4 +20,7 @@ yarn dev
 # ライブラリインストール
 yarn add framer-motion
 yarn add dayjs
+yarn add @fortawesome/fontawesome-svg-core
+yarn add @fortawesome/free-solid-svg-icons
+yarn add @fortawesome/react-fontawesome
 ```
