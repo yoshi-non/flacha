@@ -39,6 +39,11 @@
     overflow: hidden;
     box-shadow: 0px 0px 5px 3px #3a44ff;
     background-color: white;
+    transition: 0.4s;
+}
+
+.linkBlock:hover {
+    scale: 1.1;
 }
 
 .linkImg {
