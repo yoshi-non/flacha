@@ -19,17 +19,17 @@
 .titleBox {
   position: absolute;
   top: 60px;
-  right: 60px;
+  right: 80px;
   flex: 1;
   padding: 0 5px;
 }
 
 .title {
-  font-size: 3.5rem;
+  font-size: 3.2rem;
 }
 
 .subtitle {
-  font-size: 1.3rem;
+  font-size: 1.1rem;
 }
 
 .title,
