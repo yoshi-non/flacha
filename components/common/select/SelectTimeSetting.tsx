@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import styles from '../../styles/Flash.module.css'
+import styles from '../../../styles/CommonBtn.module.css'
 
 const SelectTimeSetting = ({setSelectTimeValue}: any) => {
     const [selectBtnValue0,setSelectBtnValue0] = useState(false)
