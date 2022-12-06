@@ -42,45 +42,45 @@ const SelectTimeSetting = ({setSelectTimeValue}: any) => {
     
   return (
     <div className={styles.btnBox}>
-    <div className={styles.btnTitle}>
-      長考時間/1問:
+      <div className={styles.btnTitle}>
+        長考時間/1問:
+      </div>
+      <div className={styles.btnBlock}>
+        {selectBtnValue0 ? (
+          <div className={styles.curSelectBtn}>0.5秒</div>
+        ) : (
+          <div
+            className={styles.selectBtn}
+            onClick={() => changeCurSelectBtn0()}
+          >0.5秒</div>
+        )}
+        {selectBtnValue1 ? (
+          <div className={styles.curSelectBtn}>1秒</div>
+        ) : (
+          <div
+            className={styles.selectBtn}
+            onClick={() => changeCurSelectBtn1()}
+          >1秒</div>
+        )}
+        {selectBtnValue2 ? (
+          <div className={styles.curSelectBtn}>2秒</div>
+        ) : (
+          <div
+            className={styles.selectBtn}
+            onClick={() => changeCurSelectBtn2()}
+          >2秒</div>
+        )}
+        {selectBtnValue3 ? (
+          <div className={styles.curSelectBtn}>3秒</div>
+        ) : (
+          <div
+            className={styles.selectBtn}
+            onClick={() => changeCurSelectBtn3()}
+          >3秒</div>
+        )}
+      </div>
     </div>
-    <div className={styles.btnBlock}>
-      {selectBtnValue0 ? (
-        <div className={styles.curSelectBtn}>0.5秒</div>
-      ) : (
-        <div
-          className={styles.selectBtn}
-          onClick={() => changeCurSelectBtn0()}
-        >0.5秒</div>
-      )}
-      {selectBtnValue1 ? (
-        <div className={styles.curSelectBtn}>1秒</div>
-      ) : (
-        <div
-          className={styles.selectBtn}
-          onClick={() => changeCurSelectBtn1()}
-        >1秒</div>
-      )}
-      {selectBtnValue2 ? (
-        <div className={styles.curSelectBtn}>1秒</div>
-      ) : (
-        <div
-          className={styles.selectBtn}
-          onClick={() => changeCurSelectBtn2()}
-        >2秒</div>
-      )}
-      {selectBtnValue3 ? (
-        <div className={styles.curSelectBtn}>1秒</div>
-      ) : (
-        <div
-          className={styles.selectBtn}
-          onClick={() => changeCurSelectBtn3()}
-        >3秒</div>
-      )}
-    </div>
-  </div>
-)
+  )
 }
 
 export default SelectTimeSetting
