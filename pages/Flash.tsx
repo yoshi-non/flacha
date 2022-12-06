@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import React, { useState } from 'react'
+import StartButton from '../components/common/button/StartButton'
 import Layout from '../components/common/layout'
 import SelectDigitSetting from '../components/flash/SelectDigitSetting'
 import SelectQuestionSetting from '../components/flash/SelectQuestionSetting'
@@ -13,13 +14,23 @@ const Flash = () => {
 
   return (
     <Layout>
-      <Link href="/">ホームに戻る</Link>
+      {/* <Link href="/">ホームに戻る</Link> */}
       <div className={styles.container}>
-        <main className={styles.main}>
-          <SelectTimeSetting setSelectTimeValue={setSelectTimeValue}/>
-          <SelectQuestionSetting setSelectQuestionValue={setSelectQuestionValue}/>
-          <SelectDigitSetting setSelectDigitValue={setSelectDigitValue}/>
-        </main>
+
+      <div>
+        <div className={styles.selectContainer}>
+          <div className={styles.selectBoxHr}></div>
+          <div className={styles.selectBox}>
+            <SelectTimeSetting setSelectTimeValue={setSelectTimeValue}/>
+            <SelectQuestionSetting setSelectQuestionValue={setSelectQuestionValue}/>
+            <SelectDigitSetting setSelectDigitValue={setSelectDigitValue}/>
+          </div>
+          <div className={styles.selectBoxHr}></div>
+        </div>
+
+        <StartButton/>
+      </div>
+
       </div>
     </Layout>
   )
