@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from '../../../styles/Flash.module.css'
+import styles from '../../../styles/CommonBtn.module.css'
 
 const StartButton = () => {
     return (
