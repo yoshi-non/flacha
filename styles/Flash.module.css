@@ -32,3 +32,24 @@
     padding: 20px 0;
     background-color: #2f2f2f52;
 }
+
+/* カウントダウン */
+.countContainer {
+    width: 1000px;
+    min-height: 500px;
+    margin: 0 auto;
+    background-color: #2f2f2f52;
+    border-radius: 100px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 5px white;
+}
+
+.countBox {
+    color: white;
+    font-size: 6rem;
+    font-weight: 600;
+    text-shadow: 0px 0px 5px #8187fa;
+}
