@@ -39,11 +39,13 @@
 /* Startボタン */
 
 .startBox {
+    margin: 0 auto;
     flex: 2;
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: 10px;
 }
 
 .startBtn {
