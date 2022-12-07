@@ -13,13 +13,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    max-height: 80px;
 }
 
 .returnIcon {
     color: #8187fa;
-    width: 70px;
-    height: 70px;
     padding: 10px;
+    width: 35px;
+    height: 35px;
     border: 5px solid #8187fa;
     border-right: 10px solid #8187fa;
     border-bottom: 10px solid #8187fa;
