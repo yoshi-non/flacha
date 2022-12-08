@@ -4,6 +4,10 @@
 
 html,
 body {
+  width: 100%;
+  min-height: 100vh;
+  background-image: url(../public/images/bg_home.png);
+  background-size: cover;
   color: #8187fa;
   /* font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif; */

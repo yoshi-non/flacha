@@ -3,8 +3,6 @@
 .container {
   width: 100%;
   min-height: 100vh;
-  background-image: url(../public/images/bg_home.png);
-  background-size: cover;
   overflow: hidden;
   position: relative;
 }
