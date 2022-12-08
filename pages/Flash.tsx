@@ -8,7 +8,7 @@ import SelectQuestionSetting from '../components/common/select/SelectQuestionSet
 import SelectTimeSetting from '../components/common/select/SelectTimeSetting'
 import styles from '../styles/Flash.module.css'
 import { motion } from 'framer-motion'
-import { fadeInUp } from '../animations/variants'
+import { fadeInPopup, fadeInUp } from '../animations/variants'
 import Image from 'next/image'
 
 const Flash = () => {
@@ -188,7 +188,10 @@ const Flash = () => {
   const [answerFlg, setAnswerFlg] = useState(true)
   // ユーザーが解答する数値
   const [answerText, setAnswerText] = useState<number>()
+  // 解答の数値
   const [answer, setAnswer] = useState<number>()
+  // 正解判定フラグ
+  const [correctFlg, setCorrectFlg] = useState(false)
 
   // 解答処理
   const handleAnswerCheck = () => {
@@ -202,15 +205,31 @@ const Flash = () => {
       answer = sum(arrPlayValue)
       setAnswer(answer)
     }
-    console.log(answer)
     if (answerText == answer) {
       // 正解のときの処理
-      alert("正解だよー")
+      setCorrectFlg(true)
     } else {
       // 不正解のときの処理
-      alert("ぶっぶー")
+      setCorrectFlg(false)
     }
     setAnswerFlg(false)
+  }
+
+  // リセット処理
+  const resetGame = () => {
+    setSelectQuestionValue(10)
+    setCountdown("")
+    setCountFlg(false)
+    setPlayFlg(false)
+    setResultFlg(false)
+    setArrPlayName([])
+    setArrPlayValue([])
+    setArrPlayComment([])
+    setPlayCount(0)
+    setAnswerFlg(true)
+    setAnswerText(0)
+    setAnswer(0)
+    setCorrectFlg(false)
   }
 
   return (
@@ -286,20 +305,50 @@ const Flash = () => {
         {!countFlg && !playFlg && resultFlg && (
           <div className={styles.resultContainer}>
             {answerFlg ? (
-              <div>
-                解答する画面
-                <input type="text" onChange={(e) => setAnswerText(e.target.value)} value={answerText} />
-                <button onClick={() => {handleAnswerCheck()}}>OK</button>
+              <div className={styles.answerContainer}>
+                <p className={styles.answerTitle}>答えは?</p>
+                <div className={styles.answerInputBox}>
+                  <input
+                    type="number"
+                    min="0"
+                    // max="1000000"
+                    onChange={(e) => setAnswerText(e.target.value)}
+                    value={answerText}
+                    className={styles.answerInput}
+                  />
+                  <label className={styles.answerDefineLabel}>
+                    <input
+                      type="submit"
+                      onClick={() => {handleAnswerCheck()}}
+                      value={"OK"}
+                      className={styles.answerDefineBtn}
+                    />
+                    OK
+                  </label>
+                </div>
               </div>
             ) : (
-              <div>
-                <p>
-                  あなたの入力した値:{answerText}
-                </p>
-                <p>
-                  答え:{answer}
-                </p>
-              </div>
+              <motion.div
+                initial="hidden"
+                animate="visible"
+                variants={fadeInPopup}
+                className={styles.correctContainer}
+              >
+                {correctFlg ? (
+                  <div className={styles.correctTitle}>正解!</div>
+                ) : (
+                  <div className={styles.correctTitle}>不正解😭</div>
+                )}
+                <div className={styles.correctBox}>
+                  <p className={styles.correctLeft}>あなたの解答:</p>
+                  <p className={styles.correctRight}>{answerText}</p>
+                </div>
+                <div className={styles.correctBox}>
+                  <p className={styles.correctLeft}>答え:</p>
+                  <p className={styles.correctRight}>{answer}</p>
+                </div>
+                <button className={styles.againBtn} onClick={() => resetGame()}>もう一度遊ぶ</button>
+              </motion.div>
             )}
           </div>
         )}
