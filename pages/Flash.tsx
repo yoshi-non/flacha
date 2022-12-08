@@ -199,7 +199,7 @@ const Flash = () => {
   
   const [answerFlg, setAnswerFlg] = useState(true)
   // ユーザーが解答する数値
-  const [answerText, setAnswerText] = useState<number>()
+  const [answerText, setAnswerText] = useState<number | void>()
   // 解答の数値
   const [answer, setAnswer] = useState<number>()
   // 正解判定フラグ
@@ -239,7 +239,7 @@ const Flash = () => {
     setArrPlayComment([])
     setPlayCount(0)
     setAnswerFlg(true)
-    setAnswerText(0)
+    setAnswerText()
     setAnswer(0)
     setCorrectFlg(false)
   }
@@ -326,7 +326,7 @@ const Flash = () => {
                     min="0"
                     // max="1000000"
                     onChange={(e) => setAnswerText(Number(e.target.value))}
-                    value={answerText}
+                    value={Number(answerText)}
                     className={styles.answerInput}
                   />
                   <label className={styles.answerDefineLabel}>
@@ -354,7 +354,7 @@ const Flash = () => {
                 )}
                 <div className={styles.correctBox}>
                   <p className={styles.correctLeft}>あなたの解答:</p>
-                  <p className={styles.correctRight}>{answerText}</p>
+                  <p className={styles.correctRight}>{Number(answerText)}</p>
                 </div>
                 <div className={styles.correctBox}>
                   <p className={styles.correctLeft}>答え:</p>
