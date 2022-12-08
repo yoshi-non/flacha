@@ -325,7 +325,7 @@ const Flash = () => {
                     type="number"
                     min="0"
                     // max="1000000"
-                    onChange={(e) => setAnswerText(e.target.value)}
+                    onChange={(e) => setAnswerText(Number(e.target.value))}
                     value={answerText}
                     className={styles.answerInput}
                   />
