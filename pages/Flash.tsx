@@ -185,7 +185,34 @@ const Flash = () => {
     }
   }, [selectQuestionValue, playFlg])
   
-  const [answerFlg, setAnswerFlg] = useState(false)
+  const [answerFlg, setAnswerFlg] = useState(true)
+  // ユーザーが解答する数値
+  const [answerText, setAnswerText] = useState<number>()
+  const [answer, setAnswer] = useState<number>()
+
+  // 解答処理
+  const handleAnswerCheck = () => {
+    let answer:number = 0
+    if (arrPlayValue){
+      const sum = function(arr: number[]) {
+        let total = 0;
+        for (var i = 0, len = arr.length; i < len; i++) total += arr[i];
+        return total;
+      };
+      answer = sum(arrPlayValue)
+      setAnswer(answer)
+    }
+    console.log(answer)
+    if (answerText == answer) {
+      // 正解のときの処理
+      alert("正解だよー")
+    } else {
+      // 不正解のときの処理
+      alert("ぶっぶー")
+    }
+    setAnswerFlg(false)
+  }
+
   return (
     <Layout>
       <ReturnButton/>
@@ -260,11 +287,18 @@ const Flash = () => {
           <div className={styles.resultContainer}>
             {answerFlg ? (
               <div>
-                結果画面
+                解答する画面
+                <input type="text" onChange={(e) => setAnswerText(e.target.value)} value={answerText} />
+                <button onClick={() => {handleAnswerCheck()}}>OK</button>
               </div>
             ) : (
               <div>
-                解答する画面
+                <p>
+                  あなたの入力した値:{answerText}
+                </p>
+                <p>
+                  答え:{answer}
+                </p>
               </div>
             )}
           </div>
