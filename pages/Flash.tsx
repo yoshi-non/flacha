@@ -64,14 +64,16 @@ const Flash = () => {
     setArrPlayName(arr)
   }
   // プレイで使用する"スパチャの色"データ配列
-  const arrPlayTopColor: string[] = []
-  const arrPlayBottomColor: string[] = []
+  const [arrPlayTopColor, setArrPlayTopColor] = useState<string[]>()
+  const [arrPlayBottomColor,setArrPlayBottomColor] = useState<string[]>()
 
   // プレイで使用する"金額"データ配列
   let Min: number,Max: number
   const [arrPlayValue, setArrPlayValue] = useState<number[]>()
   const defineArrPlayValue = () => {
     const arr: number[] = []
+    const arrTopColor: string[] = []
+    const arrBottomColor: string[] = []
     for (let i = 0; i < selectQuestionValue; i++ ) {
       switch (selectDigitValue) {
         case 1:
@@ -101,35 +103,37 @@ const Flash = () => {
       arr.push(randomValue)
       // 金額に応じてスパチャの色を指定
       if(randomValue < 200){
-        arrPlayTopColor?.push("")
-        arrPlayBottomColor?.push("")
+        arrTopColor.push("rgb(0, 0, 184)")
+        arrBottomColor.push("rgb(0, 0, 255)")
       }
       if(randomValue >= 200 && randomValue < 500){
-        arrPlayTopColor?.push("")
-        arrPlayBottomColor?.push("")
+        arrTopColor.push("rgb(0, 101, 159)")
+        arrBottomColor.push("rgb(0, 162, 255)")
       }
       if(randomValue >= 500 && randomValue < 1000){
-        arrPlayTopColor?.push("")
-        arrPlayBottomColor?.push("")
+        arrTopColor.push("rgb(0, 96, 66)")
+        arrBottomColor.push("rgb(23, 196, 130)")
       }
       if(randomValue >= 1000 && randomValue < 2000){
-        arrPlayTopColor?.push("")
-        arrPlayBottomColor?.push("")
+        arrTopColor.push("rgb(217, 149, 23)")
+        arrBottomColor.push("rgb(255, 191, 0)")
       }
       if(randomValue >= 2000 && randomValue < 5000){
-        arrPlayTopColor?.push("")
-        arrPlayBottomColor?.push("")
+        arrTopColor.push("rgb(206, 120, 0)")
+        arrBottomColor.push("rgb(255, 162, 32)")
       }
       if(randomValue >= 5000 && randomValue < 10000){
-        arrPlayTopColor?.push("")
-        arrPlayBottomColor?.push("")
+        arrTopColor?.push("rgb(138, 0, 71)")
+        arrBottomColor.push("rgb(196, 0, 101)")
       }
       if(randomValue >= 10000){
-        arrPlayTopColor?.push("rgb(206, 0, 0)")
-        arrPlayBottomColor?.push("rgb(255, 0, 0)")
+        arrTopColor.push("rgb(206, 0, 0)")
+        arrBottomColor.push("rgb(255, 0, 0)")
       }
     }
     setArrPlayValue(arr)
+    setArrPlayTopColor(arrTopColor)
+    setArrPlayBottomColor(arrBottomColor)
   }
 
   // プレイで使用する"コメント"データ配列
@@ -152,6 +156,10 @@ const Flash = () => {
   const [showPlayName, setShowPlayName] = useState("")
   const [showPlayValue, setShowPlayValue] = useState(0)
   const [showPlayComment, setShowPlayComment] = useState("")
+  const [showPlayTopColor, setShowPlayTopColor] = useState("")
+  const [showPlayBottomColor, setShowPlayBottomColor] = useState("")
+  
+
 
   // プレイ処理
   const [playCount, setPlayCount] = useState(0)
@@ -165,14 +173,18 @@ const Flash = () => {
     if (arrPlayComment){
       setShowPlayComment(arrPlayComment[playCount])
     }
+    if (arrPlayTopColor){
+      setShowPlayTopColor(arrPlayTopColor[playCount])
+    }
+    if (arrPlayBottomColor){
+      setShowPlayBottomColor(arrPlayBottomColor[playCount])
+    }
     let sampleInterval = setInterval(() => {
       if (selectQuestionValue > 1 && playFlg) {
         setSelectQuestionValue(selectQuestionValue - 1)
         setPlayCount(playCount + 1)
       }
       if (selectQuestionValue === 1 && playFlg) {
-        // setCountdown("FINISH")
-        // FINISHが表示されて1秒後に結果画面を表示
         setTimeout(function(){
           setResultFlg(true)
           setPlayFlg(false)
@@ -232,6 +244,7 @@ const Flash = () => {
     setCorrectFlg(false)
   }
 
+  console.log(showPlayTopColor)
   return (
     <Layout>
       <ReturnButton/>
@@ -280,7 +293,7 @@ const Flash = () => {
         {/* プレイ画面 */}
         {!countFlg && playFlg && !resultFlg && (
           <div className={styles.playContainer}>
-            <div className={styles.playTopBox}>
+            <div className={styles.playTopBox} style={{background: showPlayTopColor}}>
               <Image
                 src='/images/user/user-icon.png'
                 width={100}
@@ -293,7 +306,7 @@ const Flash = () => {
                 <div className={styles.supValue}>￥{showPlayValue}</div>
               </div>
             </div>
-            <div className={styles.playBottomBox}>
+            <div className={styles.playBottomBox} style={{background: showPlayBottomColor}}>
               <p className={styles.supComment}>
                 {showPlayComment}
               </p>
