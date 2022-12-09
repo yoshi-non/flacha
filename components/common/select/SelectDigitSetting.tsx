@@ -1,5 +1,66 @@
+import { css } from '@emotion/react'
 import React, { useState } from 'react'
-import styles from '../../../styles/CommonBtn.module.css'
+
+const styles = {
+  /* Selectボタンコンポーネント */
+  btnBox: css`
+    width: 1000px;
+    margin: 30px auto;
+    display: flex;
+    font-size: 1.4rem;
+  `,
+  btnTitle: css`
+    color: rgb(255, 255, 255);
+    text-shadow: 1px 2px 3px #2f2f2f;
+    flex: 1;
+    padding: 5px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  `,
+  btnBlock: css`
+    flex: 3;
+    padding: 5px;
+    display: flex;
+    gap: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  `,
+  curSelectBtn: css`
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    min-width: 100px;
+    padding: 2px 10px;
+    border-top: 5px solid rgba(89, 89, 89, 0.5);
+    border-bottom: 5px solid rgba(89, 89, 89, 0.5);
+    border-left: 1px solid rgba(89, 89, 89, 0.5);
+    border-right: 1px solid rgba(89, 89, 89, 0.5);
+    border-radius: 10px;
+    transition: 0.3s;
+    color: #8187fa;
+    background-color: #fff3f8;
+  `,
+  selectBtn: css`
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    min-width: 100px;
+    padding: 2px 10px;
+    border-top: 5px solid rgba(89, 89, 89, 0.5);
+    border-bottom: 5px solid rgba(89, 89, 89, 0.5);
+    border-left: 1px solid rgba(89, 89, 89, 0.5);
+    border-right: 1px solid rgba(89, 89, 89, 0.5);
+    border-radius: 10px;
+    transition: 0.3s;
+    color: #fff3f8;
+    background-color: #8187fa;
+    &:hover {
+      opacity: 0.7;
+    }
+  `,
+}
 
 const SelectDigitSetting = ({setSelectDigitValue}: any) => {
     const [selectBtnValue0,setSelectBtnValue0] = useState(false)
@@ -55,48 +116,48 @@ const SelectDigitSetting = ({setSelectDigitValue}: any) => {
     }
     
   return (
-    <div className={styles.btnBox}>
-    <div className={styles.btnTitle}>
+    <div css={styles.btnBox}>
+    <div css={styles.btnTitle}>
       桁数:
     </div>
-    <div className={styles.btnBlock}>
+    <div css={styles.btnBlock}>
       {selectBtnValue0 ? (
-        <div className={styles.curSelectBtn}>1桁</div>
+        <div css={styles.curSelectBtn}>1桁</div>
       ) : (
         <div
-          className={styles.selectBtn}
+          css={styles.selectBtn}
           onClick={() => changeCurSelectBtn0()}
         >1桁</div>
       )}
       {selectBtnValue1 ? (
-        <div className={styles.curSelectBtn}>2桁</div>
+        <div css={styles.curSelectBtn}>2桁</div>
       ) : (
         <div
-          className={styles.selectBtn}
+          css={styles.selectBtn}
           onClick={() => changeCurSelectBtn1()}
         >2桁</div>
       )}
       {selectBtnValue2 ? (
-        <div className={styles.curSelectBtn}>3桁</div>
+        <div css={styles.curSelectBtn}>3桁</div>
       ) : (
         <div
-          className={styles.selectBtn}
+          css={styles.selectBtn}
           onClick={() => changeCurSelectBtn2()}
         >3桁</div>
       )}
       {selectBtnValue3 ? (
-        <div className={styles.curSelectBtn}>4桁</div>
+        <div css={styles.curSelectBtn}>4桁</div>
       ) : (
         <div
-          className={styles.selectBtn}
+          css={styles.selectBtn}
           onClick={() => changeCurSelectBtn3()}
         >4桁</div>
       )}
       {selectBtnValue4 ? (
-          <div className={styles.curSelectBtn}>5桁</div>
+          <div css={styles.curSelectBtn}>5桁</div>
       ) : (
         <div
-          className={styles.selectBtn}
+          css={styles.selectBtn}
           onClick={() => changeCurSelectBtn4()}
         >5桁</div>
       )}
