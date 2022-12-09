@@ -1,14 +1,23 @@
+import { css } from '@emotion/react'
 import React from 'react'
 import ReturnButton from '../components/common/button/ReturnButton'
 import Layout from '../components/common/layout'
 import ExternalLink from '../components/ExternalLink'
-import styles from '../styles/Credit.module.css'
+
+const styles = {
+  container: css`
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+    position: relative;
+  `,
+}
 
 const Credit = () => {
   return (
     <Layout>
       <ReturnButton/>
-      <div className={styles.container}>
+      <div css={styles.container}>
           <ExternalLink
               title="GitHub"
               description="このサイトを構成しているソースコードはGitHubにて公開しております。"
