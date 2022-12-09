@@ -8,14 +8,14 @@ const Button = () => {
     <Link href="Flash" className={styles.btnBlock} scroll={false}>
       フラッシュモード
     </Link>
-    <Link href="Chat" className={styles.btnBlock} scroll={false}>
-      チャットモード
+    <Link href="/" className={styles.btnBlock} scroll={false}>
+      チャットモード※未完成
     </Link>
     <div className={styles.btnBlock}>
-      遊び方
+      遊び方※未完成
     </div>
-    <Link href="Setting" className={styles.btnBlock} scroll={false}>
-      設定
+    <Link href="/" className={styles.btnBlock} scroll={false}>
+      設定※未完成
     </Link>
     <Link href="Credit" className={styles.btnBlock} scroll={false}>
       クレジット
