@@ -6,7 +6,7 @@ import io from "socket.io-client"
 import Image from 'next/image'
 import { SERVER } from '../../pages/api/server'
 
-const socket = io(SERVER ? SERVER : "localhost:5000")
+const socket = io(SERVER || "http://localhost:10000")
 
 // @ts-ignore
 const styles = {
@@ -80,7 +80,7 @@ const styles = {
 
 const Comment = () => {
   const [message, setMessage] = useState<string>("")
-  const [list, setList] = useState<string[]>([]);
+  const [list, setList] = useState<string[]>(["テストコメント"]);
   const time = useTime(1000)
   
   const handleSendMessage = () => {
