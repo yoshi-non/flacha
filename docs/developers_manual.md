@@ -25,4 +25,5 @@ yarn add @fortawesome/free-solid-svg-icons
 yarn add @fortawesome/react-fontawesome
 yarn add sharp
 yarn add @emotion/react
+yarn add socket.io-client
 ```
