@@ -16,6 +16,6 @@
 ![flach-flash-play](https://user-images.githubusercontent.com/83369665/206885231-5e3bac42-bbd0-4c9a-a7a9-12fed48afe3b.png)
 
 
-### Socket.ioを用いたServerレポジトリはこちら
+### Serverレポジトリはこちら
 
 https://github.com/yoshi-non/flacha-server
