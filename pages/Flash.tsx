@@ -156,15 +156,16 @@ const styles = {
     border-radius: 10px;
     display: flex;
     justify-content: center;
-  `,
+    `,
 
-  answerInput: css`
+answerInput: css`
     font-size: 2rem;
     padding: 20px;
     font-weight: 600;
     border-radius: 20px 0px 0px 20px;
     caret-color: #8187fa;
-
+    background-color: white;
+    
     &::-webkit-inner-spin-button,
     &::-webkit-outer-spin-button {
       -webkit-appearance: none;
