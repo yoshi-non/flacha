@@ -27,3 +27,11 @@ yarn add sharp
 yarn add @emotion/react
 yarn add socket.io-client
 ```
+
+```bash
+# ビルド
+yarn run build
+
+# ビルド後サーバー起動
+yarn start
+```
